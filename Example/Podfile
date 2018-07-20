@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AgnesUnicorn_Example' do
+  pod 'AgnesUnicorn', :path => '../'
+
+  target 'AgnesUnicorn_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

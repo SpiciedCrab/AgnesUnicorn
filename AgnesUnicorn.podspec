@@ -32,11 +32,6 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'AgnesUnicorn/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'AgnesUnicorn' => ['AgnesUnicorn/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'RxSwift'
+  s.dependency 'RxCocoa'
 end

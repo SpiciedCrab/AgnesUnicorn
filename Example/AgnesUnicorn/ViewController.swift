@@ -7,17 +7,25 @@
 //
 
 import UIKit
+import AgnesUnicorn
+
+let key: String = "first"
 
 class ViewController: UIViewController {
-
+    
+    let viewModel = ViewModel()
+    
+    @IBOutlet weak var keyLabel: UILabel!
+    
+    @IBOutlet weak var contentText: UITextField!
+    @IBOutlet weak var tapButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        contentText.rx.text.map { $0 ?? "" }.bind(to: viewModel.input)
+        
+        viewModel.output.bind(to: keyLabel.rx.text)
     }
 
 }

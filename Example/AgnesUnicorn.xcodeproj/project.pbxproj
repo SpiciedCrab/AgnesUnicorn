@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		477499FC2101D74F0022B179 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477499FB2101D74F0022B179 /* ViewModel.swift */; };
+		47749A002101D8770022B179 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477499FF2101D8770022B179 /* SecondViewController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -28,9 +30,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		048806762061FC7F795765C1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		048806762061FC7F795765C1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		24E34B4A427FC9CB74904B92 /* Pods_AgnesUnicorn_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AgnesUnicorn_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2909AB132B89E6D289E2C057 /* AgnesUnicorn.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = AgnesUnicorn.podspec; path = ../AgnesUnicorn.podspec; sourceTree = "<group>"; };
+		2909AB132B89E6D289E2C057 /* AgnesUnicorn.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AgnesUnicorn.podspec; path = ../AgnesUnicorn.podspec; sourceTree = "<group>"; };
+		477499FB2101D74F0022B179 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		477499FF2101D8770022B179 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		5885647EBB9C1EDC0F3FA354 /* Pods_AgnesUnicorn_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AgnesUnicorn_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* AgnesUnicorn_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgnesUnicorn_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,7 +47,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6D5DA85F85589AF4BE5B197A /* Pods-AgnesUnicorn_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgnesUnicorn_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AgnesUnicorn_Tests/Pods-AgnesUnicorn_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		7A8A4FBA204F61326C279121 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		7A8A4FBA204F61326C279121 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		8CA9D9CB2EA54AA63F0BAC6A /* Pods-AgnesUnicorn_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgnesUnicorn_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AgnesUnicorn_Example/Pods-AgnesUnicorn_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9217503B7AE5439CFC6EF882 /* Pods-AgnesUnicorn_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgnesUnicorn_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-AgnesUnicorn_Example/Pods-AgnesUnicorn_Example.release.xcconfig"; sourceTree = "<group>"; };
 		EF3125CA2C2F50801D839EAC /* Pods-AgnesUnicorn_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgnesUnicorn_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AgnesUnicorn_Tests/Pods-AgnesUnicorn_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				477499FB2101D74F0022B179 /* ViewModel.swift */,
+				477499FF2101D8770022B179 /* SecondViewController.swift */,
 			);
 			name = "Example for AgnesUnicorn";
 			path = AgnesUnicorn;
@@ -338,10 +344,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AgnesUnicorn_Example/Pods-AgnesUnicorn_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AgnesUnicorn/AgnesUnicorn.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AgnesUnicorn.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -370,7 +380,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47749A002101D8770022B179 /* SecondViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				477499FC2101D74F0022B179 /* ViewModel.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

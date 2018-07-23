@@ -9,6 +9,7 @@
 ## Situration
 
 The simple requirement is like:
+
 ![](https://ws2.sinaimg.cn/large/006tKfTcgy1ftjxewsb9ug309x0hxdgg.gif)
 
 In MVVM with RxSwift,  we may face the situation below:

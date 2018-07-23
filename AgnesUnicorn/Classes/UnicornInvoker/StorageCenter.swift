@@ -12,27 +12,18 @@ import RxCocoa
 struct StorageCenter {
     static var center: [String : RxWrapper] = [:]
     
-    static func push<T : Unicorn>(key: String , rxUnicorn: PublishRelay<T>)
-    {
-        let wrapper = RxWrapper(rxUnicorn: rxUnicorn)
-        StorageCenter.center[key] = wrapper
-    }
-    
-    static func push<T : Unicorn>(key: String , rxUnicorn: BehaviorRelay<T>)
-    {
+    static func push<T : ObservableType>(key: String , rxUnicorn: T) where T.E : Unicorn {
         let wrapper = RxWrapper(rxUnicorn: rxUnicorn)
         StorageCenter.center[key] = wrapper
     }
     
     @discardableResult
-    static func pop(key: String)-> RxWrapper?
-    {
+    static func pop(key: String)-> RxWrapper? {
         StorageCenter.center.removeValue(forKey: key)
         return StorageCenter.center[key]
     }
     
-    static func rxUnicorn(key: String) -> RxWrapper?
-    {
+    static func rxUnicorn(key: String) -> RxWrapper? {
         return StorageCenter.center[key]
     }
     

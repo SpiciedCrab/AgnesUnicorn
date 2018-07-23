@@ -11,9 +11,8 @@ import RxSwift
 
 private let castError = "Cannot find your unicorn, but giving you 🦄️🦄️ to be happy~"
 
-public struct UnicornFinder {
-    public static func findUnicorn<T : Unicorn>(key: String) -> PublishRelay<T>
-    {
+struct UnicornFinder {
+    static func findUnicorn<T : Unicorn>(key: String) -> PublishRelay<T> {
         guard let rxUnicorn = StorageCenter.rxUnicorn(key: key) else {
             assert(false, castError)
             return PublishRelay()
@@ -29,8 +28,7 @@ public struct UnicornFinder {
         return rxWrapper.unicornWithRx
     }
     
-    public static func howManyUnicons() -> Int
-    {
+    static func howManyUnicons() -> Int {
         return StorageCenter.center.count
     }
 }

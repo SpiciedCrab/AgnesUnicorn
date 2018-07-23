@@ -9,11 +9,16 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-public extension PublishRelay where Element : Unicorn
-{
-    public func donate(key : String) -> PublishRelay
-    {
+public extension ObservableType where E : Unicorn {
+    public func donate(key : String, to agnes: Agnes? = nil) -> Self {
+        
         StorageCenter.push(key: key, rxUnicorn: self)
+        
+        if let realAgnes = agnes
+        {
+            realAgnes.setupBag(key: key)
+        }
+        
         return self
     }
 }

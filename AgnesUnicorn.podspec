@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AgnesUnicorn'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of AgnesUnicorn.'
+  s.version          = '0.0.1'
+  s.summary          = 'To find your unicorn in your all components'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,11 +18,12 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Let your viewModel to call all Signals cross the modules.
+You can temporarily save your signal in to the cache, then another viewModel's signal can be binded to it.
+The lifecycle of the temp signal will be ended while the original viewModel is denited.
                        DESC
 
   s.homepage         = 'https://github.com/magic_harly@hotmail.com/AgnesUnicorn'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'magic_harly@hotmail.com' => 'hy@mogoroom.com' }
   s.source           = { :git => 'https://github.com/magic_harly@hotmail.com/AgnesUnicorn.git', :tag => s.version.to_s }

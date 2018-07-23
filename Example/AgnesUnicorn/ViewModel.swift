@@ -17,13 +17,14 @@ extension String : Unicorn
 }
 
 
-class ViewModel {
+class ViewModel : NSObject {
     
     let input: PublishRelay<String> = PublishRelay()
     
     let output: PublishRelay<String> = PublishRelay()
     
-    init() {
-        input.donate(key: key).bind(to: output)
+    override init() {
+        super.init()
+        input.donate(key: key, to: agnes).bind(to: output)
     }
 }

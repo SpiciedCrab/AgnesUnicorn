@@ -17,24 +17,23 @@ class ViewController: UIViewController {
     
     let viewModel = ViewModel()
     
+    let disposeBag: DisposeBag = DisposeBag()
+    
     @IBOutlet weak var keyLabel: UILabel!
     
     @IBOutlet weak var contentText: UITextField!
     @IBOutlet weak var tapButton: UIButton!
     
+    @IBAction func tap(_ sender: UIButton) {
+        print("unicon counts: tap \(agnes.unicornCountsInBag())")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        contentText.rx.text.map { $0 ?? "" }.bind(to: viewModel.input)
+        contentText.rx.text.map { $0 ?? "" }.bind(to: viewModel.input).disposed(by: disposeBag)
         
-        viewModel.output.bind(to: keyLabel.rx.text)
-    }
-    
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        print("unicon counts: \(UnicornFinder.howManyUnicons())")
+        viewModel.output.bind(to: keyLabel.rx.text).disposed(by: disposeBag)
     }
 }
 

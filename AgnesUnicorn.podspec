@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AgnesUnicorn'
-  s.version          = '0.0.2'
+  s.version          = '0.0.3'
   s.summary          = 'To find your unicorn in your all components'
 
 # This description is used to generate tags and improve search results.
@@ -26,7 +26,7 @@ The lifecycle of the temp signal will be ended while the original viewModel is d
   s.homepage         = 'https://github.com/SpiciedCrab/AgnesUnicorn'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'magic_harly@hotmail.com' => 'hy@mogoroom.com' }
-  s.source           = { :git => 'https://github.com/SpiciedCrab/AgnesUnicorn/AgnesUnicorn.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/SpiciedCrab/AgnesUnicorn.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'

@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-public extension PublishRelay where Element == Unicorn
+public extension PublishRelay where Element : Unicorn
 {
     public func donate(key : String) -> PublishRelay
     {

@@ -9,23 +9,28 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-private let castError = "Cannot find your unicorn, but giving you some suprice to be happy~"
+private let castError = "Cannot find your unicorn, but giving you 🦄️🦄️ to be happy~"
 
 public struct UnicornFinder {
-    public static func findUnicorn(key: String) -> PublishRelay<Unicorn>
+    public static func findUnicorn<T : Unicorn>(key: String) -> PublishRelay<T>
     {
         guard let rxUnicorn = StorageCenter.rxUnicorn(key: key) else {
-            assert(true, castError)
+            assert(false, castError)
             return PublishRelay()
         }
         
-        guard rxUnicorn.box is AnyRxWrapper<PublishRelay<Unicorn>> else
+        guard rxUnicorn.box is AnyRxWrapper<PublishRelay<T>> else
         {
-            assert(true, castError)
+            assert(false, castError)
             return PublishRelay()
         }
         
-        let rxWrapper = rxUnicorn.box as! AnyRxWrapper<PublishRelay<Unicorn>>
+        let rxWrapper = rxUnicorn.box as! AnyRxWrapper<PublishRelay<T>>
         return rxWrapper.unicornWithRx
+    }
+    
+    public static func howManyUnicons() -> Int
+    {
+        return StorageCenter.center.count
     }
 }

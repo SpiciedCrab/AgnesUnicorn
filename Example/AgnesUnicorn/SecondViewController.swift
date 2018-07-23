@@ -8,20 +8,29 @@
 
 import UIKit
 import AgnesUnicorn
-
+import RxSwift
+import RxCocoa
 
 class SecondViewController: UIViewController {
 
+    let disposeBag = DisposeBag()
+    let secondPusher: PublishRelay<String> = PublishRelay<String>()
     @IBOutlet weak var secondButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        secondButton.rx.tap.map { "Unicorn comes!" }.bind(to: UnicornFinder.findUnicorn(key: key))
-        secondButton.rx.tap.map {} .subscribe(onNext: { (_) in
-            self.dismiss(animated: true, completion: nil)
+        secondButton.rx.tap.map { "Unicorn comes!" }.bind(to: secondPusher).disposed(by: disposeBag)
+        secondButton.rx.tap.map {} .subscribe(onNext: {[weak self] (_) in
+            guard let strongSelf = self else { return }
+            strongSelf.dismiss(animated: true, completion: nil)
         })
         
+        secondPusher.donate(key: "gogo").bind(to: UnicornFinder.findUnicorn(key: key)).disposed(by: disposeBag)
         // Do any additional setup after loading the view.
+    }
+    
+    deinit {
+        print("deni")
     }
 
 

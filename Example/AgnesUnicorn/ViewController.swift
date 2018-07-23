@@ -8,6 +8,8 @@
 
 import UIKit
 import AgnesUnicorn
+import RxSwift
+import RxCocoa
 
 let key: String = "first"
 
@@ -27,6 +29,12 @@ class ViewController: UIViewController {
         
         viewModel.output.bind(to: keyLabel.rx.text)
     }
+    
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("unicon counts: \(UnicornFinder.howManyUnicons())")
+    }
 }
 

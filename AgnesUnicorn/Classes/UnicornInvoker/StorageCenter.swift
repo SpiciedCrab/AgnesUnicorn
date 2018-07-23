@@ -9,26 +9,29 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-public struct StorageCenter {
-    private static var center: [String : RxWrapper<Unicorn>] = [:]
+struct StorageCenter {
+    static var center: [String : RxWrapper] = [:]
     
-    static func push(key: String , rxUnicorn: PublishRelay<Unicorn>)
+    static func push<T : Unicorn>(key: String , rxUnicorn: PublishRelay<T>)
     {
-        StorageCenter.center[key] = RxWrapper(rxUnicorn: rxUnicorn)
+        let wrapper = RxWrapper(rxUnicorn: rxUnicorn)
+        StorageCenter.center[key] = wrapper
     }
     
-    static func push(key: String , rxUnicorn: BehaviorRelay<Unicorn>)
+    static func push<T : Unicorn>(key: String , rxUnicorn: BehaviorRelay<T>)
     {
-        StorageCenter.center[key] = RxWrapper(rxUnicorn: rxUnicorn)
+        let wrapper = RxWrapper(rxUnicorn: rxUnicorn)
+        StorageCenter.center[key] = wrapper
     }
     
-    static func pop(key: String)-> RxWrapper<Unicorn>?
+    @discardableResult
+    static func pop(key: String)-> RxWrapper?
     {
         StorageCenter.center.removeValue(forKey: key)
         return StorageCenter.center[key]
     }
     
-    static func rxUnicorn(key: String) -> RxWrapper<Unicorn>?
+    static func rxUnicorn(key: String) -> RxWrapper?
     {
         return StorageCenter.center[key]
     }

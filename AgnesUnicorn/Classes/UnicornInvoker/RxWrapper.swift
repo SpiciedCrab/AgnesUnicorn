@@ -13,7 +13,7 @@ public protocol Unicorn {
     
 }
 
-class RxBox<Unicorn> : ObservableType
+class RxBox : ObservableType
 {
     func subscribe<O>(_ observer: O) -> Disposable where O : ObserverType, RxBox.E == O.E {
         fatalError()
@@ -22,7 +22,7 @@ class RxBox<Unicorn> : ObservableType
     typealias E = Unicorn
 }
 
-class AnyRxWrapper<RxUnicorn : ObservableType> : RxBox<RxUnicorn.E>
+class AnyRxWrapper<RxUnicorn : ObservableType> : RxBox
 {
     var unicornWithRx : RxUnicorn
     
@@ -35,7 +35,7 @@ class AnyRxWrapper<RxUnicorn : ObservableType> : RxBox<RxUnicorn.E>
     }
 }
 
-class RxWrapper<Unicorn>: ObservableType {
+class RxWrapper: ObservableType {
     
     func subscribe<O>(_ observer: O) -> Disposable where O : ObserverType, RxWrapper.E == O.E {
         return box.subscribe(observer)
@@ -43,9 +43,9 @@ class RxWrapper<Unicorn>: ObservableType {
     
     typealias E = Unicorn
     
-    let box: RxBox<Unicorn>
+    let box: RxBox
     
-    init<RxUnicorn: ObservableType>(rxUnicorn: RxUnicorn) where RxUnicorn.E == E {
+    init<RxUnicorn: ObservableType>(rxUnicorn: RxUnicorn) where RxUnicorn.E: E {
         box = AnyRxWrapper(rxUnicorn: rxUnicorn)
     }
 }

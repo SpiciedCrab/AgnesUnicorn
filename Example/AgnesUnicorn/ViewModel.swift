@@ -19,14 +19,11 @@ extension String : Unicorn
 
 class ViewModel {
     
-    let input: PublishRelay<Unicorn> = PublishRelay()
+    let input: PublishRelay<String> = PublishRelay()
     
     let output: PublishRelay<String> = PublishRelay()
     
     init() {
-        input.donate(key: key).map({ (uni) -> String in
-            guard let str = uni as? String else { return "" }
-            return str + "gogo"
-        }).bind(to: output)
+        input.donate(key: key).bind(to: output)
     }
 }

@@ -23,10 +23,10 @@ You can temporarily save your signal in to the cache, then another viewModel's s
 The lifecycle of the temp signal will be ended while the original viewModel is denited.
                        DESC
 
-  s.homepage         = 'https://github.com/magic_harly@hotmail.com/AgnesUnicorn'
+  s.homepage         = 'https://github.com/SpiciedCrab/AgnesUnicorn'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'magic_harly@hotmail.com' => 'hy@mogoroom.com' }
-  s.source           = { :git => 'https://github.com/magic_harly@hotmail.com/AgnesUnicorn.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/SpiciedCrab/AgnesUnicorn/AgnesUnicorn.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
